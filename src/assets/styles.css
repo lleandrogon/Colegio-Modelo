@@ -1,3 +1,13 @@
-.row {
-    background-color: black;
+:root {
+    --azul: #0F2347;
+    --verde: #80AD5C;
+    --dourado: #AC9158;
+}
+
+.sem-marcadores {
+    list-style-type: none;
+}
+
+.sem-sublinhado {
+    text-decoration: none;
 }
