@@ -103,28 +103,16 @@ export default {
     }
 
     .lista li {
-        margin: 15px 20px 0 20px;
+        margin: 20px 20px 0 20px;
     }
 
     .lista li a {
-        font-size: 1.3em;
+        font-size: 1.5em;
         color: var(--azul);
         font-weight: 500;
     }
 
     .lista li a:hover {
         color: var(--verde);
-    }
-
-    @media (min-width: 768px) {
-        .cabecalho {
-            padding: 10px 10px;
-        }
-    }
-
-    @media (min-width: 1200px) {
-        .nome-colegio {
-            font-size: 1.6em;
-        }
     }
 </style>

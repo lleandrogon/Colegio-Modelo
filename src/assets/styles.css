@@ -1,7 +1,9 @@
 :root {
+    --branco: #fff;
     --azul: #0F2347;
     --verde: #80AD5C;
     --dourado: #AC9158;
+    --cinza-escuro: #1b1b1b;
 }
 
 .sem-marcadores {
@@ -10,4 +12,29 @@
 
 .sem-sublinhado {
     text-decoration: none;
+}
+
+.titulo {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.form-label {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.form-control {
+    background-color: transparent;
+    color: var(--branco);
+    border: none;
+    border-bottom: 2px solid var(--dourado);
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+    color: var(--branco);
+    border-bottom: 2px solid var(--dourado);
 }
