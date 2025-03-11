@@ -1,5 +1,5 @@
 <template>
-    <section class="contato d-flex justify-content-center px-5">
+    <section class="contato d-flex justify-content-center">
         <div class="conteudo row">
             <div class="form-container col-12 col-md-6">
                 <h2 class="titulo-form mb-5">Transforme seu objetivo em realidade. Entre em contato!</h2>
@@ -13,12 +13,15 @@
                         <input type="email" id="email" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="telefone" class="form-label">Endereço email:</label>
+                        <label for="telefone" class="form-label">Telefone:</label>
                         <input type="tel" id="telefone" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="assunto" class="form-label">Assunto:</label>
                         <textarea id="assunto" class="form-control"></textarea>
+                    </div>
+                    <div class="botoes mt-4">
+                        <button type="submit" class="botao-form">Enviar</button>
                     </div>
                 </form>
             </div>
@@ -37,40 +40,71 @@ export default {
 
 <style scoped>
     .contato {
-        padding: 100px 0;
+        padding: 30px 30px;
     }
 
     .conteudo {
         color: var(--branco);
         border: none;
         border-radius: 25px;
-        padding: 0;
-        height: 500px;
-        width: 1200px;
+        height: auto;
+        max-width: 1200px;
     }
 
     .form-container {
         background-color: var(--cinza-escuro);
-        border-radius: 25px 0 0 25px;
+        border-radius: 25px 25px 0 0;
         padding: 20px;
-    }
-
-    .row {
-        padding: 0;
-        margin: 0;
     }
 
     .titulo-form {
-        font-size: 2.6em;
+        font-size: 2em;
     }
 
     .iframe-container {
-        padding: 20px;
+        padding: 0;
+        height: 300px;
     }
 
     .iframe {
         width: 100%;
         height: 100%;
-        border-radius: 0 25px 25px 0;
+        border-radius: 0 0 25px 25px;
+    }
+
+    .botao-form {
+        color: var(--branco);
+        background-color: var(--verde);
+        font-size: 1.2em;
+        font-weight: 500;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 20px;
+    }
+
+    .botao-form:hover {
+        transition: 0.3s ease, transform 0.3s ease;
+        transform: scale(1.1);
+        box-shadow: 0 4px 10px var(--dourado);
+    }
+
+    @media (min-width: 768px) {
+        .conteudo {
+            display: flex;
+            flex-direction: row;
+            height: 500px;
+        }
+
+        .form-container {
+            border-radius: 25px 0 0 25px;
+        }
+
+        .iframe-container {
+            height: auto;
+        }
+
+        .iframe {
+            border-radius: 0 25px 25px 0;
+        }
     }
 </style>
