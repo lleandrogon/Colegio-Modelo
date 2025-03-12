@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-6 d-flex align-items-center">
                 <img src="logo-escola.png" alt="logo" class="logo img-fluid">
-                <span class="nome-colegio d-none d-lg-inline-block ms-3">Colégio Modelo</span>
+                <span class="nome-colegio d-none d-lg-inline-block ms-2">Colégio Modelo</span>
             </div>
             <div class="col-6 d-flex d-lg-none justify-content-end align-items-center">
                 <i class="menu-burger fa-solid fa-bars me-3" @click="showNav()"></i>
@@ -51,7 +51,6 @@ export default {
 <style scoped>
     .cabecalho {
         padding: 0 5px;
-        background-color: #ffffff;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
         padding: 10px 0;
@@ -70,6 +69,8 @@ export default {
     .nome-colegio {
         font-size: 1.3em;
         font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
     }
 
     .menu-burger {

@@ -6,19 +6,19 @@
                 <form method="POST" class="px-4">
                     <div class="mb-3">
                         <label for="nome" class="form-label">Nome completo do responsável:</label>
-                        <input type="text" id="nome" class="form-control">
+                        <input type="text" id="nome" class="form-control" autocomplete="off">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Endereço email:</label>
-                        <input type="email" id="email" class="form-control">
+                        <input type="email" id="email" class="form-control" autocomplete="off">
                     </div>
                     <div class="mb-3">
                         <label for="telefone" class="form-label">Telefone:</label>
-                        <input type="tel" id="telefone" class="form-control">
+                        <input type="tel" id="telefone" class="form-control" autocomplete="off">
                     </div>
                     <div class="mb-3">
                         <label for="assunto" class="form-label">Assunto:</label>
-                        <textarea id="assunto" class="form-control"></textarea>
+                        <textarea id="assunto" class="form-control" autocomplete="off"></textarea>
                     </div>
                     <div class="botoes mt-4">
                         <button type="submit" class="botao-form">Enviar</button>
@@ -40,7 +40,8 @@ export default {
 
 <style scoped>
     .contato {
-        padding: 30px 30px;
+        background: linear-gradient(135deg, var(--azul), var(--verde));
+        padding: 60px 30px;
     }
 
     .conteudo {
@@ -49,6 +50,12 @@ export default {
         border-radius: 25px;
         height: auto;
         max-width: 1200px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .conteudo:hover {
+        transform: scale(1.009);
+        box-shadow: 0px 6px 20px var(--cinza-escuro);
     }
 
     .form-container {
@@ -89,12 +96,6 @@ export default {
     }
 
     @media (min-width: 768px) {
-        .conteudo {
-            display: flex;
-            flex-direction: row;
-            height: 500px;
-        }
-
         .form-container {
             border-radius: 25px 0 0 25px;
         }

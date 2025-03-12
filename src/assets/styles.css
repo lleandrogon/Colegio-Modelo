@@ -3,6 +3,8 @@
     --azul: #0F2347;
     --verde: #80AD5C;
     --dourado: #AC9158;
+    --cinza-claro: #f1f1f1;
+    --cinza: #6d6d6d;
     --cinza-escuro: #1b1b1b;
 }
 
@@ -17,6 +19,13 @@
 .titulo {
     font-size: 2.5em;
     font-weight: bold;
+    text-transform: uppercase;
+}
+
+.subtitulo {
+    font-size: 2em;
+    font-weight: 600;
+    color: var(--verde);
 }
 
 .form-label {

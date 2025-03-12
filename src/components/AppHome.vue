@@ -45,7 +45,7 @@ export default {
 
     @media (min-width: 768px) {
         .imagem {
-            height: 800px;
+            height: 700px;
         }
 
         .carousel-control-prev-icon {

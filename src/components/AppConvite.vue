@@ -1,8 +1,8 @@
 <template>
     <section class="convite">
         <h2 class="titulo">Venha estudar conosco</h2>
-        <div class="row justify-content-center mt-5">
-            <div v-for="destaque in destaques" :key="destaque.id" class="col-12 col-md-6 col-xl-4 d-flex justify-content-center my-2">
+        <div class="row justify-content-center">
+            <div v-for="destaque in destaques" :key="destaque.id" class="col-12 col-md-6 col-xl-4 d-flex justify-content-center">
                 <div class="destaque">
                     <i :class="destaque.icon" class="icone me-4"></i>
                     <span class="span-titulo">{{ destaque.titulo }}</span>
@@ -24,37 +24,37 @@ export default {
                     id: 1,
                     icon: "fa-solid fa-graduation-cap",
                     titulo: "1º lugar no ENEM",
-                    descricao: "Nosso compromisso com a excelência educacional é refletido na conquista do 1º lugar no ENEM. Este resultado é fruto de um ensino de qualidade, que prepara nossos alunos para enfrentar os maiores desafios acadêmicos e alcançar o sucesso em suas vidas profissionais. Além disso, nossa abordagem pedagógica foca no desenvolvimento integral do estudante, incentivando habilidades críticas. Com um corpo docente altamente qualificado e recursos modernos, garantimos que nossos alunos estejam sempre um passo à frente."
+                    descricao: "Conquistamos o 1º lugar no ENEM, resultado do nosso compromisso com a excelência educacional e um ensino que prepara os alunos para desafios acadêmicos e profissionais."
                 },
                 {
                     id: 2,
                     icon: "fa-solid fa-chalkboard-teacher",
                     titulo: "Professores Qualificados",
-                    descricao: "Nosso corpo docente é composto por professores altamente qualificados, com vasta experiência no ensino e com constante atualização sobre as melhores práticas pedagógicas. Acreditamos que um bom professor é essencial para formar cidadãos críticos, preparados para enfrentar desafios no mercado de trabalho e na vida acadêmica. A dedicação de nossos professores é um dos pilares que sustentam o nosso sucesso educacional, e sua constante busca por novas metodologias e inovações pedagógicas torna o aprendizado mais eficaz e dinâmico."
+                    descricao: "Nossos professores são altamente qualificados e experientes, dedicados a formar cidadãos críticos e preparados para o mercado de trabalho e a vida acadêmica."
                 },
                 {
                     id: 3,
                     icon: "fa-solid fa-book-open",
                     titulo: "Biblioteca Moderna",
-                    descricao: "Nossa biblioteca é um ambiente de aprendizagem dinâmico, com um acervo atualizado e diversificado, incluindo livros, revistas e recursos digitais que atendem às necessidades de todos os alunos. Além disso, oferecemos espaços de estudo individuais e colaborativos, onde os estudantes podem se concentrar ou trabalhar em grupo, acessando tecnologias de ponta e materiais complementares ao conteúdo curricular. A biblioteca também oferece workshops e palestras sobre temas acadêmicos e culturais."
+                    descricao: "Nossa biblioteca oferece um acervo atualizado e espaços de estudo colaborativos, com recursos digitais e workshops para enriquecer o aprendizado."
                 },
                 {
                     id: 4,
                     icon: "fa-solid fa-users",
                     titulo: "Ambiente Escolar Inclusivo",
-                    descricao: "Nosso ambiente escolar é projetado para promover a inclusão e a colaboração entre alunos de diferentes origens e habilidades. Acreditamos na importância da diversidade para o desenvolvimento humano, e por isso, incentivamos o trabalho em equipe, o respeito às diferenças e a construção de um ambiente onde todos se sintam acolhidos e respeitados. Criamos um espaço que favorece o aprendizado, o crescimento pessoal e o desenvolvimento social."
+                    descricao: "Promovemos um ambiente inclusivo e colaborativo, onde a diversidade é valorizada e todos os alunos se sentem acolhidos e respeitados."
                 },
                 {
                     id: 5,
                     icon: "fa-solid fa-laptop-code",
                     titulo: "Tecnologia de Ponta",
-                    descricao: "Utilizamos tecnologias de ponta para proporcionar aos nossos alunos uma experiência educacional imersiva e de alta qualidade. Nossas salas de aula são equipadas com ferramentas digitais modernas, como quadros interativos, tablets e plataformas de ensino online, garantindo que os alunos tenham acesso aos recursos mais inovadores para o aprendizado. Além disso, oferecemos cursos de programação, robótica e outras áreas tecnológicas, permitindo que os estudantes desenvolvam habilidades práticas que os preparem para o mercado de trabalho."
+                    descricao: "Utilizamos tecnologias modernas, como quadros interativos e plataformas online, para oferecer uma experiência educacional inovadora e de alta qualidade."
                 },
                 {
                     id: 6,
                     icon: "fa-solid fa-network-wired",
                     titulo: "Parcerias com Universidades",
-                    descricao: "Nossa escola mantém parcerias estratégicas com empresas e universidades renomadas, proporcionando aos nossos alunos estágios, intercâmbios e programas de capacitação. Essas parcerias abrem portas para novas oportunidades, ajudando os estudantes a expandir suas redes profissionais e a estarem preparados para os desafios do mercado de trabalho."
+                    descricao: "Parcerias com universidades e empresas renomadas proporcionam estágios, intercâmbios e programas de capacitação para nossos alunos."
                 },
             ]
         }
@@ -87,7 +87,7 @@ export default {
         height: auto;
         border: 2px solid var(--dourado);
         border-radius: 20px;
-        padding: 30px;
+        padding: 20px;
         margin: 15px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
