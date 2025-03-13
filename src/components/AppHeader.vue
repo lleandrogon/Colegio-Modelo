@@ -10,20 +10,20 @@
             </div>
             <div v-if="navResponsivo" class="navResponsivo text-center d-lg-none">
                 <ul class="lista-responsiva ms-4">
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Cursos</a></li>
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Matricula</a></li>
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Parceria</a></li>
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Acadêmico</a></li>
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Perguntas</a></li>
+                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Matrícula</a></li>
+                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Contato</a></li>
+                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Níveis</a></li>
+                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Eventos</a></li>
+                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Depoimentos</a></li>
                 </ul>
             </div>
             <div class="col-6 d-none d-lg-flex justify-content-end align-items-center">
                 <ul class="lista d-flex">
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Cursos</a></li>
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Matricula</a></li>
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Parceria</a></li>
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Acadêmico</a></li>
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Perguntas</a></li>
+                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Matrícula</a></li>
+                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Contato</a></li>
+                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Níveis</a></li>
+                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Eventos</a></li>
+                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Depoimentos</a></li>
                 </ul>
             </div>
         </div>
@@ -50,10 +50,9 @@ export default {
 
 <style scoped>
     .cabecalho {
-        padding: 0 5px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
-        padding: 10px 0;
+        padding: 10px 5px;
     }
 
     .row {
@@ -63,7 +62,6 @@ export default {
 
     .logo {
         width: 140px;
-
     }
 
     .nome-colegio {
@@ -94,9 +92,10 @@ export default {
     }
 
     .lista-responsiva li a {
-        font-size: 1.6em;
+        font-size: 1.3em;
         color: var(--azul);
         font-weight: 500;
+        text-transform: uppercase;
     }
 
     .lista-responsiva li a:hover {
@@ -108,12 +107,23 @@ export default {
     }
 
     .lista li a {
-        font-size: 1.5em;
+        font-size: 1.1em;
         color: var(--azul);
         font-weight: 500;
+        text-transform: uppercase;
     }
 
     .lista li a:hover {
         color: var(--verde);
     }
+
+    @media (min-width: 1400px) {
+        .lista-responsiva li a {
+            font-size: 1.6em;
+        }
+
+        .lista li a {
+            font-size: 1.5em;
+        }
+    }   
 </style>

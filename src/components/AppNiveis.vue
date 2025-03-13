@@ -10,7 +10,7 @@
                     <h3 class="subtitulo text-center mb-3">{{ nivel.nome }}</h3>
                     <p>{{ nivel.descricao }}</p>
                     <div class="d-flex justify-content-end">
-                        <button class="botao-visita">Agende sua visita!</button>
+                        <a href="#/matricula"><button class="botao-visita">Matricule-se!</button></a>
                     </div>
                 </div>
             </div>
