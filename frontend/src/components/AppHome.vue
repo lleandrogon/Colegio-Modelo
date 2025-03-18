@@ -38,12 +38,20 @@ export default {
 </script>
 
 <style scoped>
+    .carousel {
+      padding-top: 120px;
+    }
+
     .imagem {
         width: 100%;
         height: 600px;
     }
 
     @media (min-width: 768px) {
+        .carousel {
+          padding-top: 100px;
+        }
+
         .imagem {
             height: 700px;
         }
@@ -55,9 +63,5 @@ export default {
         .carousel-control-next-icon {
             margin-left: 100px;
         }
-    }
-
-    @media (min-width: 1200px) {
-        
     }
 </style>
