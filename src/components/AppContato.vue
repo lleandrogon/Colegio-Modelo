@@ -5,23 +5,23 @@
                 <h2 class="titulo-form mb-5">Transforme seu objetivo em realidade. Entre em contato!</h2>
                 <form method="POST" class="px-4">
                     <div class="mb-3">
-                        <label for="nome" class="form-label">Nome completo do responsável:</label>
-                        <input type="text" id="nome" class="form-control" autocomplete="off">
+                        <label for="nome" class="form-label">Nome:</label>
+                        <input type="text" id="nome" class="form-control" autocomplete="off" v-model="nome">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Endereço email:</label>
-                        <input type="email" id="email" class="form-control" autocomplete="off">
+                        <input type="email" id="email" class="form-control" autocomplete="off" v-model="email">
                     </div>
                     <div class="mb-3">
                         <label for="telefone" class="form-label">Telefone:</label>
-                        <input type="tel" id="telefone" class="form-control" autocomplete="off">
+                        <input type="tel" id="telefone" class="form-control" autocomplete="off" v-model="telefone">
                     </div>
                     <div class="mb-3">
                         <label for="assunto" class="form-label">Assunto:</label>
-                        <textarea id="assunto" class="form-control" autocomplete="off"></textarea>
+                        <textarea id="assunto" class="form-control" autocomplete="off" v-model="assunto"></textarea>
                     </div>
                     <div class="botoes mt-4">
-                        <button type="submit" class="botao-form">Enviar</button>
+                        <button type="button" @click="enviarFormulario()" class="botao-form">Enviar</button>
                     </div>
                 </form>
             </div>
@@ -34,7 +34,45 @@
 
 <script>
 export default {
-    name: "AppContato"
+    name: "AppContato",
+
+    data() {
+        return {
+            nome: "",
+            email: "",
+            telefone: "",
+            assunto: ""
+        }
+    },
+
+    methods: {
+        enviarFormulario() {
+            if (this.validaFormulario()) {
+                const mensagem = `Olá, gostaria tirar dúvidas. Aqui estão meus dados: \n\nNome: ${this.nome}\nEmail: ${this.email}\nTelefone: ${this.telefone}\n\nAssunto: ${this.assunto}`;
+
+                const numero = "5599999999999";
+                const urlWhatsApp = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+                window.open(urlWhatsApp, '_blank');
+
+                this.limparFormulario();
+            } else {
+                alert("Por favor, preencha todos os campos corretamente.");
+            }
+        },
+
+        limparFormulario() {
+            this.nome = "";
+            this.email = "";
+            this.telefone = "";
+            this.assunto = "";
+        },
+
+        validaFormulario() {
+            return this.nome !== "" && this.email !== "" && this.telefone !== "" && this.assunto !== "";
+        }
+
+    }
 }
 </script>
 
@@ -68,6 +106,21 @@ export default {
         font-size: 2em;
     }
 
+    .form-control {
+        background-color: transparent;
+        color: var(--branco);
+        border: none;
+        border-bottom: 2px solid var(--dourado);
+    }
+
+    .form-control:focus {
+        outline: none;
+        box-shadow: none;
+        background-color: transparent;
+        color: var(--branco);
+        border-bottom: 2px solid var(--dourado);
+    }
+
     .iframe-container {
         padding: 0;
         height: 300px;
@@ -77,22 +130,6 @@ export default {
         width: 100%;
         height: 100%;
         border-radius: 0 0 25px 25px;
-    }
-
-    .botao-form {
-        color: var(--branco);
-        background-color: var(--verde);
-        font-size: 1.2em;
-        font-weight: 500;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 20px;
-    }
-
-    .botao-form:hover {
-        transition: 0.3s ease, transform 0.3s ease;
-        transform: scale(1.1);
-        box-shadow: 0 4px 10px var(--dourado);
     }
 
     @media (min-width: 768px) {

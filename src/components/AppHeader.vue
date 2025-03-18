@@ -10,20 +10,20 @@
             </div>
             <div v-if="navResponsivo" class="navResponsivo text-center d-lg-none">
                 <ul class="lista-responsiva ms-4">
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Matrícula</a></li>
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Contato</a></li>
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Níveis</a></li>
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Eventos</a></li>
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Depoimentos</a></li>
+                    <li class="sem-marcadores"><a href="#/matricula" class="sem-sublinhado">Matrícula</a></li>
+                    <li class="sem-marcadores"><a @click.prevent="scrollTo('contato')" class="sem-sublinhado">Contato</a></li>
+                    <li class="sem-marcadores"><a @click.prevent="scrollTo('niveis')" class="sem-sublinhado">Níveis</a></li>
+                    <li class="sem-marcadores"><a @click.prevent="scrollTo('eventos')" class="sem-sublinhado">Eventos</a></li>
+                    <li class="sem-marcadores"><a @click.prevent="scrollTo('depoimentos')" class="sem-sublinhado">Depoimentos</a></li>
                 </ul>
             </div>
             <div class="col-6 d-none d-lg-flex justify-content-end align-items-center">
                 <ul class="lista d-flex">
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Matrícula</a></li>
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Contato</a></li>
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Níveis</a></li>
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Eventos</a></li>
-                    <li class="sem-marcadores"><a href="#" class="sem-sublinhado">Depoimentos</a></li>
+                    <li class="sem-marcadores"><a href="#/matricula" class="sem-sublinhado">Matrícula</a></li>
+                    <li class="sem-marcadores"><a @click.prevent="scrollTo('contato')" class="sem-sublinhado">Contato</a></li>
+                    <li class="sem-marcadores"><a @click.prevent="scrollTo('niveis')" class="sem-sublinhado">Níveis</a></li>
+                    <li class="sem-marcadores"><a @click.prevent="scrollTo('eventos')" class="sem-sublinhado">Eventos</a></li>
+                    <li class="sem-marcadores"><a @click.prevent="scrollTo('depoimentos')" class="sem-sublinhado">Depoimentos</a></li>
                 </ul>
             </div>
         </div>
@@ -43,6 +43,13 @@ export default {
     methods: {
         showNav() {
             this.navResponsivo = !this.navResponsivo;
+        },
+
+        scrollTo(id) {
+            const section = document.getElementById(id);
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth" })
+            }
         }
     }
 }
@@ -100,6 +107,7 @@ export default {
 
     .lista-responsiva li a:hover {
         color: var(--verde);
+        cursor: pointer;
     }
 
     .lista li {
@@ -115,6 +123,7 @@ export default {
 
     .lista li a:hover {
         color: var(--verde);
+        cursor: pointer;
     }
 
     @media (min-width: 1400px) {

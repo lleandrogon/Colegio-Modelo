@@ -1,11 +1,11 @@
 <template>
     <AppHeader />
-    <AppHome />
-    <AppConvite />
-    <AppContato />
-    <AppNiveis />
-    <AppEventos />
-    <AppDepoimentos />
+    <AppHome id="home" />
+    <AppConvite id="convite" />
+    <AppContato id="contato" />
+    <AppNiveis id="niveis" />
+    <AppEventos id="eventos" />
+    <AppDepoimentos id="depoimentos" />
     <AppFooter />
     <AppCopyright />
 </template>
@@ -37,5 +37,5 @@ export default {
 </script>
 
 <style>
-
+    
 </style>
