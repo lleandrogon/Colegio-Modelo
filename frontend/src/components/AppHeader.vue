@@ -57,9 +57,12 @@ export default {
 
 <style scoped>
     .cabecalho {
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
+        background-color: var(--branco);
         padding: 10px 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        z-index: 2000;
+        transition: all 0.3s ease;
     }
 
     .row {
