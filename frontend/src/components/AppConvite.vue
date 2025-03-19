@@ -1,8 +1,12 @@
 <template>
-    <section class="convite">
+    <section ref="convite" class="convite">
         <h2 class="titulo">Venha estudar conosco</h2>
         <div class="row justify-content-center">
-            <div v-for="destaque in destaques" :key="destaque.id" class="col-12 col-md-6 col-xl-4 d-flex justify-content-center">
+            <div v-for="destaque in destaques" 
+                :key="destaque.id" 
+                class="col-12 col-md-6 col-xl-4 d-flex justify-content-center destaque-container"
+                :class="{ 'transition-slide-up': isVisible }">
+                
                 <div class="destaque">
                     <i :class="destaque.icon" class="icone me-4"></i>
                     <span class="span-titulo">{{ destaque.titulo }}</span>
@@ -19,47 +23,37 @@ export default {
 
     data() {
         return {
+            isVisible: false,
             destaques: [
-                {
-                    id: 1,
-                    icon: "fa-solid fa-graduation-cap",
-                    titulo: "1º lugar no ENEM",
-                    descricao: "Conquistamos o 1º lugar no ENEM, resultado do nosso compromisso com a excelência educacional e um ensino que prepara os alunos para desafios acadêmicos e profissionais."
-                },
-                {
-                    id: 2,
-                    icon: "fa-solid fa-chalkboard-teacher",
-                    titulo: "Professores Qualificados",
-                    descricao: "Nossos professores são altamente qualificados e experientes, dedicados a formar cidadãos críticos e preparados para o mercado de trabalho e a vida acadêmica."
-                },
-                {
-                    id: 3,
-                    icon: "fa-solid fa-book-open",
-                    titulo: "Biblioteca Moderna",
-                    descricao: "Nossa biblioteca oferece um acervo atualizado e espaços de estudo colaborativos, com recursos digitais e workshops para enriquecer o aprendizado."
-                },
-                {
-                    id: 4,
-                    icon: "fa-solid fa-users",
-                    titulo: "Ambiente Escolar Inclusivo",
-                    descricao: "Promovemos um ambiente inclusivo e colaborativo, onde a diversidade é valorizada e todos os alunos se sentem acolhidos e respeitados."
-                },
-                {
-                    id: 5,
-                    icon: "fa-solid fa-laptop-code",
-                    titulo: "Tecnologia de Ponta",
-                    descricao: "Utilizamos tecnologias modernas, como quadros interativos e plataformas online, para oferecer uma experiência educacional inovadora e de alta qualidade."
-                },
-                {
-                    id: 6,
-                    icon: "fa-solid fa-network-wired",
-                    titulo: "Parcerias com Universidades",
-                    descricao: "Parcerias com universidades e empresas renomadas proporcionam estágios, intercâmbios e programas de capacitação para nossos alunos."
-                },
+                { id: 1, icon: "fa-solid fa-graduation-cap", titulo: "1º lugar no ENEM", descricao: "Conquistamos o 1º lugar no ENEM, resultado do nosso compromisso com a excelência educacional e um ensino que prepara os alunos para desafios acadêmicos e profissionais." },
+                { id: 2, icon: "fa-solid fa-chalkboard-teacher", titulo: "Professores Qualificados", descricao: "Nossos professores são altamente qualificados e experientes, dedicados a formar cidadãos críticos e preparados para o mercado de trabalho e a vida acadêmica." },
+                { id: 3, icon: "fa-solid fa-book-open", titulo: "Biblioteca Moderna", descricao: "Nossa biblioteca oferece um acervo atualizado e espaços de estudo colaborativos, com recursos digitais e workshops para enriquecer o aprendizado." },
+                { id: 4, icon: "fa-solid fa-users", titulo: "Ambiente Escolar Inclusivo", descricao: "Promovemos um ambiente inclusivo e colaborativo, onde a diversidade é valorizada e todos os alunos se sentem acolhidos e respeitados." },
+                { id: 5, icon: "fa-solid fa-laptop-code", titulo: "Tecnologia de Ponta", descricao: "Utilizamos tecnologias modernas, como quadros interativos e plataformas online, para oferecer uma experiência educacional inovadora e de alta qualidade." },
+                { id: 6, icon: "fa-solid fa-network-wired", titulo: "Parcerias com Universidades", descricao: "Parcerias com universidades e empresas renomadas proporcionam estágios, intercâmbios e programas de capacitação para nossos alunos." },
             ]
+        };
+    },
+
+    mounted() {
+        this.observeScroll();
+    },
+
+    methods: {
+        observeScroll() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        this.isVisible = true;
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            observer.observe(this.$refs.convite);
         }
     }
-}
+};
 </script>
 
 <style scoped>
@@ -112,14 +106,25 @@ export default {
 
     .descricao {
         font-size: 1.2em;
-        color: #666;
+        color: var(--cinza);
         line-height: 1.5;
         margin-top: 15px;
     }
 
-    @media (min-width> 786px) {
+    @media (min-width: 786px) {
         .convite {
             padding: 70px 50px;
         }
+    }
+
+    .destaque-container {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .transition-slide-up {
+        opacity: 1;
+        transform: translateY(0);
     }
 </style>
